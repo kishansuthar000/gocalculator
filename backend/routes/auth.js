@@ -96,7 +96,7 @@ router.post('/login', async (req, res) => {
     if (user.role !== 'superadmin') {
       const existingSession = await Session.findOne({ userId: user._id, isActive: true });
       if (existingSession) {
-        return res.status(409).json({ 
+        return res.status(401).json({ 
           message: 'Already logged in from another device',
           details: `Last login: ${new Date(existingSession.loginTime).toLocaleString()} from ${existingSession.deviceType} (${existingSession.ipAddress})`
         });

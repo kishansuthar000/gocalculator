@@ -17,7 +17,8 @@ const Login = () => {
     try {
       await login(username, password);
     } catch (err) {
-      const errorMessage = err.response?.data?.message || 'Login failed';
+      const errorMessage = err?.response?.data?.message || 'Login failed';
+      console.log('Login error:', err?.response?.data?.message);
       setError(errorMessage);
     } finally {
       setLoading(false);

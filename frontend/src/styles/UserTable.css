@@ -1,4 +1,5 @@
 .table-container {
+  display: block;
   background: white;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -165,7 +166,16 @@
   background: #ffe5e5;
 }
 
+.card-container{
+  display: none;
+}
 @media (max-width: 768px) {
+  .table-container{
+    display: none;
+  }
+  .card-container {
+    display: flex;
+  }
   .user-table {
     font-size: 12px;
   }

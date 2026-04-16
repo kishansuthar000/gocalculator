@@ -171,8 +171,9 @@ const AdminDashboard = () => {
           >
             🧮 Calculator
           </button>
+           <button onClick={logout} className="sidebar-logout-btn">🚪 Logout</button>
         </div>
-        <button onClick={logout} className="sidebar-logout-btn">🚪 Logout</button>
+       
       </div>
 
       <div className="dashboard-content">
