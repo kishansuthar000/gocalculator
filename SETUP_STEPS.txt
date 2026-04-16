@@ -1,0 +1,94 @@
+# SETUP STEPS (COPY & PASTE)
+
+## Step 1️⃣: Edit Database Connection
+
+**Open this file:**
+```
+d:\gocalc\backend\.env
+```
+
+**You'll see:**
+```
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/gocalc
+JWT_SECRET=your_jwt_secret_key_change_in_production
+NODE_ENV=development
+```
+
+### Choose your database:
+
+#### Option A: Local MongoDB (Easiest)
+Keep it as is - no changes needed.
+
+#### Option B: MongoDB Atlas (Cloud)
+1. Go to https://www.mongodb.com/cloud/atlas
+2. Create account & get your connection string
+3. Copy your string (it looks like):
+   ```
+   mongodb+srv://admin:password123@cluster0.abc123.mongodb.net/gocalc?retryWrites=true&w=majority
+   ```
+4. Replace this line in .env:
+   ```
+   MONGODB_URI=mongodb+srv://admin:password123@cluster0.abc123.mongodb.net/gocalc?retryWrites=true&w=majority
+   ```
+
+**Save the file** (Ctrl + S)
+
+---
+
+## Step 2️⃣: Run Everything
+
+Open terminal (cmd) in folder: `d:\gocalc\`
+
+Then copy & paste this:
+
+```bash
+npm run install-all
+```
+
+Wait for it to finish (takes 1-2 minutes)...
+
+Then:
+
+```bash
+npm run seed
+```
+
+Then:
+
+```bash
+npm start
+```
+
+✅ Done! Enjoy your app!
+
+---
+
+## That's All!
+
+- Backend: http://localhost:5000
+- Frontend: http://localhost:3000
+- Login: admin / admin
+
+---
+
+## If Something Goes Wrong
+
+**MongoDB Error?**
+- Make sure MongoDB is running: Start `mongod` in another terminal (if local)
+- Check connection string in `.env` is correct
+
+**Port Already in Use?**
+- Close other terminals using ports 3000 or 5000
+
+**Can't find .env file?**
+- Look in: `d:\gocalc\backend\.env`
+- File should exist already
+
+---
+
+## Keyboard Shortcuts
+
+- **Ctrl + S** = Save file
+- **Ctrl + Shift + ~** = Open terminal in VS Code
+- **Ctrl + C** = Stop running command

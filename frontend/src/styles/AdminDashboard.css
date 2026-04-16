@@ -1,0 +1,531 @@
+.navbar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-content {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Navbar Left Section - Logo and Welcome */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-shrink: 0;
+}
+
+.navbar h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.logo {
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0ff 100%);
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  letter-spacing: 1px;
+  margin: 0 !important;
+  text-shadow: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 24px !important;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px !important;
+    gap: 4px;
+  }
+}
+
+.welcome-text {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* Navbar Tabs */
+.navbar-tabs {
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.navbar-tab-btn {
+  background: none;
+  color: white;
+  border: none;
+  padding: 8px 5px;
+  border-radius: 0;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.3s;
+  white-space: nowrap;
+  position: relative;
+}
+
+.navbar-tab-btn:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.navbar-tab-btn.active {
+  border-bottom: 2px solid white;
+  padding-bottom: 6px;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.logout-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: white;
+}
+
+@media (max-width: 1024px) {
+  .navbar-content {
+    gap: 15px;
+  }
+
+  .navbar-left {
+    gap: 20px;
+  }
+
+  .navbar-tab-btn {
+    padding: 7px 3px;
+    font-size: 13px;
+  }
+
+  .welcome-text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-content {
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  .navbar-left {
+    gap: 15px;
+    flex-shrink: 0;
+  }
+
+  .logo {
+    font-size: 22px !important;
+  }
+
+  .navbar-tabs {
+    display: none !important;
+  }
+
+  .navbar-right {
+    gap: 10px;
+    margin-left: 0;
+  }
+
+  .welcome-text {
+    font-size: 12px;
+    display: block;
+  }
+
+  .logout-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-content {
+    gap: 8px;
+    justify-content: space-between;
+  }
+
+  .navbar-left {
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 18px !important;
+  }
+
+  .navbar-right {
+    gap: 8px;
+  }
+
+  .welcome-text {
+    display: none;
+  }
+
+  .logout-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+}
+
+.admin-dashboard {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.dashboard-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 20px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-content {
+    padding: 15px 10px;
+  }
+}
+
+.tab-navigation {
+  display: none;
+  gap: 10px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #dee2e6;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 15px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #666;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s;
+  position: relative;
+  bottom: -2px;
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  color: #667eea;
+}
+
+.tab-btn.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+}
+
+.tab-content {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsive tabs */
+@media (max-width: 768px) {
+  .tab-navigation {
+    gap: 5px;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+  }
+
+  .tab-btn {
+    padding: 12px 15px;
+    font-size: 13px;
+    border-bottom-width: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-navigation {
+    gap: 2px;
+    margin-bottom: 15px;
+  }
+
+  .tab-btn {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-header h3 {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+.add-btn {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.add-btn:hover {
+  background: #764ba2;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 16px;
+  color: #666;
+}
+
+.error-message {
+  background-color: #fee;
+  color: #c33;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border-left: 4px solid #c33;
+}
+
+/* Utility Classes */
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: block !important;
+  }
+}
+
+/* Hamburger Button */
+.hamburger-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+
+.hamburger-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: white;
+}
+
+/* Sidebar Overlay */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 150;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+  position: fixed;
+  right: -350px;
+  top: 0;
+  width: 350px;
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  z-index: 200;
+  transition: right 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 2px solid #dee2e6;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.sidebar-username {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.sidebar-close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s;
+}
+
+.sidebar-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.sidebar-tabs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 10px;
+}
+
+.sidebar-tab {
+  background: none;
+  border: none;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #666;
+  text-align: left;
+  border-left: 4px solid transparent;
+  transition: all 0.3s;
+  border-radius: 5px;
+}
+
+.sidebar-tab:hover {
+  background: #f5f5f5;
+  color: #667eea;
+}
+
+.sidebar-tab.active {
+  background: #f0f0ff;
+  color: #667eea;
+  border-left-color: #667eea;
+}
+
+.sidebar-logout-btn {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin: 20px 10px 20px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background 0.3s;
+}
+
+.sidebar-logout-btn:hover {
+  background: #e63946;
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+    right: -100%;
+  }
+
+  .sidebar-header {
+    padding: 15px;
+  }
+
+  .sidebar-username {
+    font-size: 14px;
+  }
+
+  .sidebar-tabs {
+    padding: 15px 5px;
+  }
+
+  .sidebar-tab {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .sidebar-logout-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    margin: 15px 5px 15px 5px;
+  }
+}
