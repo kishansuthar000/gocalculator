@@ -20,12 +20,12 @@ mongoose.connect(process.env.MONGODB_URI)
   .catch(err => console.log('MongoDB connection error:', err));
 
 // Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/users', userRoutes);
-app.use('/api/categories', categoryRoutes);
+app.use('/auth', authRoutes);
+app.use('/users', userRoutes);
+app.use('/categories', categoryRoutes);
 
 // Health check
-app.get('/api/health', (req, res) => {
+app.get('/health', (req, res) => {
   res.json({ message: 'Server is running' });
 });
 
