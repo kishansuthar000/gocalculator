@@ -4,7 +4,7 @@ import CategoryForm from '../components/CategoryForm';
 import CategoryTable from '../components/CategoryTable';
 import '../styles/CategoryManagement.css';
 
-const CategoryManagement = () => {
+function CategoryManagement() {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -53,7 +53,7 @@ const CategoryManagement = () => {
     if (window.confirm('Are you sure you want to delete this category?')) {
       try {
         await categoryAPI.deleteCategory(categoryId);
-        setCategories(categories.filter(c => c._id !== categoryId));
+        setCategories(categories.filter((c) => c._id !== categoryId));
         setError('');
       } catch (err) {
         setError('Failed to delete category');
@@ -90,6 +90,6 @@ const CategoryManagement = () => {
       )}
     </div>
   );
-};
+}
 
 export default CategoryManagement;

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/CategoryTable.css';
 
-const CategoryTable = ({ categories, onEdit, onDelete }) => {
+function CategoryTable({ categories, onEdit, onDelete }) {
   return (
     <div className="table-container">
       <table className="category-table">
@@ -17,7 +17,7 @@ const CategoryTable = ({ categories, onEdit, onDelete }) => {
           </tr>
         </thead>
         <tbody>
-          {categories.map(category => (
+          {categories.map((category) => (
             <tr key={category._id}>
               <td className="category-name">
                 <strong>{category.name}</strong>
@@ -26,7 +26,9 @@ const CategoryTable = ({ categories, onEdit, onDelete }) => {
               <td className="price-cell">{category.excise}</td>
               <td className="price-cell">{category.basic}</td>
               <td className="price-cell">{category.pmt}</td>
-              <td className="description-cell">{category.description || '-'}</td>
+              <td className="description-cell">
+                {category.description || '-'}
+              </td>
               <td>
                 <button
                   onClick={() => onEdit(category)}
@@ -46,10 +48,12 @@ const CategoryTable = ({ categories, onEdit, onDelete }) => {
         </tbody>
       </table>
       {categories.length === 0 && (
-        <p className="no-categories">No categories found. Create one to get started!</p>
+        <p className="no-categories">
+          No categories found. Create one to get started!
+        </p>
       )}
     </div>
   );
-};
+}
 
 export default CategoryTable;

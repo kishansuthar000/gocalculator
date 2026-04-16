@@ -1,7 +1,9 @@
 import React from 'react';
 import '../styles/UserTable.css';
 
-const UserTable = ({ users, onEdit, onDelete, onToggleStatus, onRowClick, currentUserRole }) => {
+function UserTable({
+  users, onEdit, onDelete, onToggleStatus, onRowClick, currentUserRole,
+}) {
   return (
     <div className="table-container">
       <table className="user-table">
@@ -16,7 +18,7 @@ const UserTable = ({ users, onEdit, onDelete, onToggleStatus, onRowClick, curren
           </tr>
         </thead>
         <tbody>
-          {users.map(user => (
+          {users.map((user) => (
             <tr
               key={user._id}
               className={`user-row ${currentUserRole === 'superadmin' && onRowClick ? 'clickable-row' : ''}`}
@@ -68,6 +70,6 @@ const UserTable = ({ users, onEdit, onDelete, onToggleStatus, onRowClick, curren
       )}
     </div>
   );
-};
+}
 
 export default UserTable;

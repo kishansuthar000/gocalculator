@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { categoryAPI } from '../api/apiClient';
 import '../styles/Calculator.css';
 
-const Calculator = () => {
+function Calculator() {
   const [categories, setCategories] = useState([]);
   const [quantities, setQuantities] = useState({});
   const [loading, setLoading] = useState(true);
@@ -17,10 +17,10 @@ const Calculator = () => {
       setLoading(true);
       const response = await categoryAPI.getAllCategories();
       setCategories(response.data);
-      
+
       // Initialize quantities
       const initialQuantities = {};
-      response.data.forEach(cat => {
+      response.data.forEach((cat) => {
         initialQuantities[cat._id] = 1;
       });
       setQuantities(initialQuantities);
@@ -34,7 +34,7 @@ const Calculator = () => {
   };
 
   const handleQuantityChange = (categoryId, value) => {
-    setQuantities(prev => ({
+    setQuantities((prev) => ({
       ...prev,
       [categoryId]: parseInt(value) || 0,
     }));
@@ -57,7 +57,7 @@ const Calculator = () => {
     let totalBasic = 0;
     let totalPmt = 0;
 
-    categories.forEach(cat => {
+    categories.forEach((cat) => {
       const qty = quantities[cat._id] || 0;
       totalBob += cat.bob * qty;
       totalExcise += cat.excise * qty;
@@ -99,7 +99,7 @@ const Calculator = () => {
           <label>Basic</label>
           <div className="card-value">{summary.basicAmount.toLocaleString()}</div>
         </div>
-        
+
         <div className="card">
           <label>Basic + Permit + Excise</label>
           <div className="card-value">{summary.basicPlusPermitPlusExcise.toLocaleString()}</div>
@@ -140,7 +140,7 @@ const Calculator = () => {
             </tr>
           </thead>
           <tbody>
-            {categories.map(category => {
+            {categories.map((category) => {
               const totals = calculateRowTotals(category);
               return (
                 <tr key={category._id}>
@@ -177,10 +177,10 @@ const Calculator = () => {
 
       {/* Reset Button */}
       <div className="calculator-actions">
-        <button 
+        <button
           onClick={() => {
             const initialQuantities = {};
-            categories.forEach(cat => {
+            categories.forEach((cat) => {
               initialQuantities[cat._id] = 1;
             });
             setQuantities(initialQuantities);
@@ -192,6 +192,6 @@ const Calculator = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Calculator;

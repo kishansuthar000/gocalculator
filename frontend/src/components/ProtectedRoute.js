@@ -2,7 +2,7 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
-const ProtectedRoute = ({ children, requiredRole }) => {
+function ProtectedRoute({ children, requiredRole }) {
   const { user, loading } = useAuth();
 
   if (loading) {
@@ -22,6 +22,6 @@ const ProtectedRoute = ({ children, requiredRole }) => {
   }
 
   return children;
-};
+}
 
 export default ProtectedRoute;
